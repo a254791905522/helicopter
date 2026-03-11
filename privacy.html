@@ -1,521 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Helicopter Flight Pilot 3D</title>
+    <title>Privacy Policy — Farm Tractor Simulator 2025</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background: #0a0e17;
-            color: #b0c4d8;
-            line-height: 1.8;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .sky-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, #0a0e17 0%, #0d1b2a 30%, #1b2838 60%, #1a3a5c 100%);
-            z-index: -2;
-        }
-
-        .grid-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image:
-                linear-gradient(rgba(0, 180, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 180, 255, 0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #111d02;
+            color: #d0d8c0;
+            line-height: 1.7;
         }
 
         header {
+            position: relative;
+            padding: 50px 20px 40px;
             text-align: center;
-            padding: 50px 20px 30px;
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(76,135,20,0.25) 0%, transparent 60%),
+                linear-gradient(180deg, #1a2e05, #111d02);
+            border-bottom: 1px solid rgba(142,206,0,0.1);
         }
 
-        .header-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(0, 180, 255, 0.15), rgba(118, 255, 3, 0.08));
-            border: 1px solid rgba(0, 180, 255, 0.3);
-            border-radius: 50px;
-            padding: 6px 24px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.7em;
-            color: #4ecdc4;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        header .back-link {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            color: #7a9e3a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
         }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #00b4ff, #00e5ff);
+        header .back-link:hover { color: #a3cc52; }
+
+        header .icon { font-size: 2.8rem; margin-bottom: 14px; }
+
+        header h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            background: linear-gradient(to right, #8fce00, #d4e157);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 2px;
             margin-bottom: 8px;
         }
 
-        .app-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9em;
-            color: #3a6080;
-            letter-spacing: 4px;
+        header .updated {
+            font-size: 0.88rem;
+            color: #6b7f50;
+        }
+
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+
+        .toc {
+            background: rgba(60,95,15,0.2);
+            border: 1px solid rgba(142,206,0,0.1);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 1rem;
+            color: #8fce00;
             text-transform: uppercase;
-        }
-
-        .effective-date {
-            text-align: center;
-            margin: 25px 0 35px;
-            padding: 12px 24px;
-            background: rgba(0, 180, 255, 0.06);
-            border: 1px solid rgba(0, 180, 255, 0.12);
-            border-radius: 8px;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .effective-date span {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75em;
-            color: #4ecdc4;
-            letter-spacing: 2px;
-        }
-
-        .policy-intro {
-            padding: 28px;
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(26, 58, 92, 0.5));
-            border: 1px solid rgba(0, 180, 255, 0.15);
-            border-radius: 14px;
-            margin-bottom: 35px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .policy-intro::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00b4ff, transparent);
-        }
-
-        .policy-intro p {
-            font-size: 1.1em;
-            color: #8ba5be;
-        }
-
-        .section-block {
-            margin: 30px 0;
-            padding: 28px;
-            background: rgba(13, 27, 42, 0.5);
-            border-radius: 12px;
-            border: 1px solid rgba(0, 180, 255, 0.08);
-            transition: border-color 0.3s ease;
-        }
-
-        .section-block:hover {
-            border-color: rgba(0, 180, 255, 0.2);
-        }
-
-        .section-num {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.65em;
-            color: #76ff03;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .section-block h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00e5ff;
-            font-size: 1.3em;
-            margin-bottom: 16px;
-            font-weight: 600;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(0, 180, 255, 0.1);
-        }
-
-        .section-block p {
-            font-size: 1.05em;
-            color: #8ba5be;
-            margin-bottom: 12px;
-        }
-
-        .section-block ul {
-            list-style: none;
-            padding: 0;
-            margin: 14px 0;
-        }
-
-        .section-block ul li {
-            padding: 8px 0 8px 28px;
-            position: relative;
-            color: #8ba5be;
-            font-size: 1.02em;
-        }
-
-        .section-block ul li::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 16px;
-            width: 8px;
-            height: 8px;
-            background: #00b4ff;
-            border-radius: 50%;
-            box-shadow: 0 0 6px rgba(0, 180, 255, 0.4);
-        }
-
-        .data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 14px;
-            margin: 16px 0;
-        }
-
-        .data-card {
-            background: rgba(0, 180, 255, 0.04);
-            border: 1px solid rgba(0, 180, 255, 0.1);
-            border-radius: 10px;
-            padding: 18px;
-        }
-
-        .data-card h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75em;
-            color: #4ecdc4;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .data-card p {
-            font-size: 0.95em;
-            color: #7a98b0;
-            margin: 0;
-        }
-
-        .highlight-note {
-            background: rgba(118, 255, 3, 0.06);
-            border-left: 3px solid #76ff03;
-            padding: 16px 22px;
-            border-radius: 0 8px 8px 0;
-            margin: 18px 0;
-        }
-
-        .highlight-note p {
-            color: #a8c8a0;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .contact-block {
-            margin: 35px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(0, 180, 255, 0.08), rgba(118, 255, 3, 0.04));
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 14px;
-            text-align: center;
-        }
-
-        .contact-block h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00e5ff;
-            font-size: 1.3em;
+            letter-spacing: 1.5px;
             margin-bottom: 14px;
         }
 
-        .contact-block p {
-            color: #8ba5be;
-            font-size: 1.05em;
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            columns: 2;
+            column-gap: 24px;
         }
 
-        .contact-block a {
-            color: #4ecdc4;
+        .toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+        }
+
+        .toc ol li a {
+            color: #a3b585;
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px dashed rgba(78, 205, 196, 0.4);
-            transition: all 0.3s ease;
+            font-size: 0.92rem;
+            transition: color 0.2s;
         }
 
-        .contact-block a:hover {
-            color: #00e5ff;
-            border-bottom-color: #00e5ff;
+        .toc ol li a::before {
+            content: counter(toc-counter, decimal-leading-zero) " ";
+            color: #556b2f;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        .toc ol li a:hover { color: #d4e157; }
+
+        .policy-section {
+            margin-bottom: 42px;
+            scroll-margin-top: 24px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #c5e17a;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(142,206,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(76,135,20,0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #8fce00;
+            flex-shrink: 0;
+        }
+
+        .policy-section p {
+            margin-bottom: 14px;
+            color: #a8b890;
+            font-size: 0.97rem;
+        }
+
+        .policy-section ul {
+            margin: 12px 0 16px 20px;
+            color: #a8b890;
+            font-size: 0.95rem;
+        }
+
+        .policy-section ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 8px;
+        }
+
+        .policy-section ul li::marker {
+            color: #4c8714;
+        }
+
+        .highlight-box {
+            background: rgba(218,165,32,0.08);
+            border-left: 3px solid #daa520;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.93rem;
+            color: #c9b87a;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 16px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(142,206,0,0.1);
+        }
+
+        .data-table th {
+            background: rgba(60,95,15,0.35);
+            color: #c5e17a;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 11px 16px;
+            font-size: 0.93rem;
+            color: #a8b890;
+            border-top: 1px solid rgba(142,206,0,0.06);
+        }
+
+        .data-table tr:nth-child(even) td {
+            background: rgba(30,50,8,0.3);
         }
 
         footer {
+            background: #0d1502;
+            border-top: 1px solid rgba(142,206,0,0.08);
+            padding: 28px 20px;
             text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(0, 180, 255, 0.1);
-            margin-top: 20px;
+        }
+
+        footer p {
+            color: #4a5e30;
+            font-size: 0.83rem;
+            margin-bottom: 6px;
         }
 
         footer a {
-            color: #4ecdc4;
+            color: #6b8a3a;
             text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8em;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
         }
 
-        footer a:hover {
-            color: #00e5ff;
-        }
+        footer a:hover { color: #8fce00; }
 
-        footer span {
-            color: #2a4060;
-            margin: 0 12px;
-        }
-
-        .copyright {
-            color: #3a5575;
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .section-block {
-                padding: 20px;
-            }
-
-            .data-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-block {
-                padding: 22px;
-            }
+        @media (max-width: 600px) {
+            main { padding: 32px 16px 60px; }
+            .toc ol { columns: 1; }
+            .toc { padding: 20px; }
+            header { padding: 40px 16px 30px; }
+            header .back-link { position: static; justify-content: center; margin-bottom: 16px; }
         }
     </style>
 </head>
-
 <body>
-    <div class="sky-bg"></div>
-    <div class="grid-overlay"></div>
 
-    <div class="container">
-        <header>
-            <div class="header-badge">Official Document</div>
-            <h1>Privacy Policy</h1>
-            <p class="app-name">Helicopter Flight Pilot 3D</p>
-        </header>
+<header>
+    <a class="back-link" href="index.html">← Back to Game</a>
+    <div class="icon">🛡️</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective Date: March 1, 2025 &nbsp;|&nbsp; Last Revised: August 21, 2025</p>
+</header>
 
-        <div class="effective-date">
-            <span>Effective Date: March 10, 2026</span>
-        </div>
-
-        <div class="policy-intro">
-            <p>
-                This Privacy Policy outlines how Helicopter Flight Pilot 3D ("the App", "we", "our", or "us")
-                collects, uses, and safeguards information when you interact with our mobile application.
-                We value your trust and are dedicated to maintaining transparency about our data practices.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 01</span>
-            <h2>Overview of Data Collection</h2>
-            <p>
-                Helicopter Flight Pilot 3D may collect certain categories of data to enhance your gameplay
-                experience, improve app performance, and deliver relevant content. The data we handle falls
-                into the following categories:
-            </p>
-            <div class="data-grid">
-                <div class="data-card">
-                    <h4>Usage Data</h4>
-                    <p>Information about how you interact with the App, such as session duration, features accessed, and in-game actions performed.</p>
-                </div>
-                <div class="data-card">
-                    <h4>Identifiers</h4>
-                    <p>Device-level identifiers used for analytics and advertising attribution purposes, including advertising identifiers provided by the operating system.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 02</span>
-            <h2>How We Use Your Data</h2>
-            <p>The information collected through the App is utilized for the following purposes:</p>
-            <ul>
-                <li>Improving overall app stability, performance, and user experience</li>
-                <li>Understanding gameplay patterns to refine missions, controls, and difficulty balancing</li>
-                <li>Delivering relevant advertisements within the App through third-party ad networks</li>
-                <li>Tracking the effectiveness of advertising campaigns and measuring user acquisition metrics</li>
-                <li>Diagnosing technical issues, crashes, and bugs to ensure reliable performance</li>
-            </ul>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 03</span>
-            <h2>Tracking and Advertising</h2>
-            <p>
-                Our App may use identifiers and usage data to track your activity across apps and websites
-                owned by third parties. This tracking enables us and our advertising partners to deliver
-                personalized advertisements and measure their effectiveness.
-            </p>
-            <div class="highlight-note">
-                <p>You can limit ad tracking through your device settings by enabling "Limit Ad Tracking" on iOS or adjusting your advertising preferences in the system privacy settings.</p>
-            </div>
-            <p>
-                We work with third-party advertising partners who may collect and process data according to
-                their own privacy policies. We encourage you to review those policies for a comprehensive
-                understanding of their data practices.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 04</span>
-            <h2>Third-Party Services</h2>
-            <p>
-                Helicopter Flight Pilot 3D integrates with third-party services for analytics, advertising,
-                and distribution. These services operate under their own privacy policies and may collect
-                data independently. Key third-party integrations include:
-            </p>
-            <ul>
-                <li>Advertising networks for displaying in-app advertisements</li>
-                <li>Analytics platforms for monitoring app performance and user engagement</li>
-                <li>Apple App Store for app distribution and purchase processing</li>
-            </ul>
-            <p>
-                We are not responsible for the privacy practices of these third-party services. We recommend
-                reviewing their respective privacy policies for detailed information.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 05</span>
-            <h2>Data Retention and Storage</h2>
-            <p>
-                Usage data and identifiers collected through the App are retained only for as long as
-                necessary to fulfill the purposes described in this policy. Aggregated and anonymized data
-                may be retained indefinitely for analytical purposes.
-            </p>
-            <p>
-                Game progress, helicopter selections, and mission completion data are stored locally on
-                your device. This local data is not transmitted to external servers and can be removed by
-                uninstalling the application or clearing app data through your device settings.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 06</span>
-            <h2>Children's Privacy</h2>
-            <p>
-                Helicopter Flight Pilot 3D is rated 9+ and may contain infrequent cartoon or fantasy
-                violence and horror/fear themes. We do not knowingly collect personal information from
-                children under the age of 13.
-            </p>
-            <p>
-                If you are a parent or guardian and believe your child has provided personal information
-                through the App, please contact us immediately so we can take appropriate steps to remove
-                such data.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 07</span>
-            <h2>Data Security</h2>
-            <p>
-                We implement reasonable technical and organizational measures to protect the data collected
-                through the App against unauthorized access, alteration, disclosure, or destruction.
-                However, no method of electronic transmission or storage is completely secure, and we cannot
-                guarantee absolute security.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 08</span>
-            <h2>Your Rights and Choices</h2>
-            <p>Depending on your jurisdiction, you may have the following rights regarding your data:</p>
-            <ul>
-                <li>Request access to the data collected about you</li>
-                <li>Request deletion of your data</li>
-                <li>Opt out of personalized advertising through device settings</li>
-                <li>Restrict or object to certain data processing activities</li>
-            </ul>
-            <p>
-                To exercise any of these rights, please reach out to us using the contact information
-                provided below.
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 09</span>
-            <h2>Policy Updates</h2>
-            <p>
-                We reserve the right to modify this Privacy Policy at any time. When significant changes
-                are made, we will update the effective date at the top of this page. Continued use of the
-                App after any modifications indicates your acceptance of the revised policy.
-            </p>
-        </div>
-
-        <div class="contact-block">
-            <h2>Contact Us</h2>
-            <p>
-                For any questions, concerns, or requests related to this Privacy Policy or our data
-                handling practices, please contact us at:
-            </p>
-            <p style="margin-top: 14px;">
-                <a href="mailto:mobtechgamerz@gmail.com">mobtechgamerz@gmail.com</a>
-            </p>
-        </div>
-
-        <div class="section-block">
-            <span class="section-num">Section 10</span>
-            <h2>Consent</h2>
-            <p>
-                By downloading, installing, or using Helicopter Flight Pilot 3D, you acknowledge that you
-                have read and understood this Privacy Policy and consent to the collection and use of your
-                information as described herein. If you do not agree with this policy, please discontinue
-                use of the App immediately.
-            </p>
-        </div>
-
-        <footer>
-            <p>
-                <a href="/index.html">Back to Home</a>
-                <span>|</span>
-                <span class="copyright">&copy; 2025 Helicopter Flight Pilot 3D. All rights reserved.</span>
-            </p>
-        </footer>
+<main>
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#scope">Scope &amp; Application</a></li>
+            <li><a href="#data-collected">Data We Collect</a></li>
+            <li><a href="#tracking">Tracking Technologies</a></li>
+            <li><a href="#purpose">How We Use Your Data</a></li>
+            <li><a href="#sharing">Third-Party Sharing</a></li>
+            <li><a href="#retention">Data Retention</a></li>
+            <li><a href="#security">Security Measures</a></li>
+            <li><a href="#children">Children's Privacy</a></li>
+            <li><a href="#rights">Your Rights &amp; Choices</a></li>
+            <li><a href="#changes">Policy Updates</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
     </div>
-</body>
 
+    <section class="policy-section" id="scope">
+        <h2><span class="num">01</span> Scope &amp; Application</h2>
+        <p>This Privacy Policy applies to <strong>Farm Tractor Simulator 2025</strong> ("the Game"), developed and published by Mob Tech Gamerz ("we", "us", or "our"). It governs how we collect, use, store, and protect information when you download, install, or interact with the Game on any supported platform including iOS, iPadOS, and macOS.</p>
+        <p>By using the Game, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with the practices described herein, please discontinue use of the Game immediately.</p>
+    </section>
+
+    <section class="policy-section" id="data-collected">
+        <h2><span class="num">02</span> Data We Collect</h2>
+        <p>We aim to minimize data collection. The following table outlines the categories of information that may be gathered during your use of the Game:</p>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data Category</th>
+                    <th>Examples</th>
+                    <th>Linked to You?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Usage Data</td>
+                    <td>Session duration, feature interactions, levels played</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Identifiers</td>
+                    <td>Advertising identifier (IDFA), vendor identifier</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Device Info</td>
+                    <td>Device model, OS version, screen resolution</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Crash Logs</td>
+                    <td>Error reports, stack traces, performance data</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="highlight-box">We do <strong>not</strong> collect names, email addresses, phone numbers, photos, or any other personally identifiable information directly from our users.</div>
+    </section>
+
+    <section class="policy-section" id="tracking">
+        <h2><span class="num">03</span> Tracking Technologies</h2>
+        <p>The Game may use the following technologies to gather non-personal data:</p>
+        <ul>
+            <li><strong>Advertising SDKs</strong> — Third-party ad networks may use advertising identifiers to serve relevant ads and measure campaign effectiveness.</li>
+            <li><strong>Analytics Tools</strong> — We use anonymized analytics to understand gameplay patterns, identify bugs, and improve overall game quality.</li>
+            <li><strong>Local Storage</strong> — Game progress, preferences, and settings are stored locally on your device and are not transmitted to our servers.</li>
+        </ul>
+        <p>On iOS 14.5 and later, advertising tracking requires your explicit consent through Apple's App Tracking Transparency (ATT) framework. You may decline tracking at any time.</p>
+    </section>
+
+    <section class="policy-section" id="purpose">
+        <h2><span class="num">04</span> How We Use Your Data</h2>
+        <p>Any data collected is used strictly for the following purposes:</p>
+        <ul>
+            <li>Delivering and maintaining core game functionality</li>
+            <li>Displaying advertisements to support the free-to-play model</li>
+            <li>Analyzing aggregated usage trends to improve game content and performance</li>
+            <li>Diagnosing technical issues and resolving crash reports</li>
+            <li>Ensuring compliance with applicable laws and platform policies</li>
+        </ul>
+    </section>
+
+    <section class="policy-section" id="sharing">
+        <h2><span class="num">05</span> Third-Party Sharing</h2>
+        <p>We do not sell, rent, or trade your personal information. However, non-personal data may be shared with trusted third-party partners in the following scenarios:</p>
+        <ul>
+            <li><strong>Ad Networks</strong> — To serve and optimize in-game advertisements (e.g., Google AdMob, Unity Ads).</li>
+            <li><strong>Analytics Providers</strong> — To process aggregated, de-identified performance and usage data.</li>
+            <li><strong>Legal Obligations</strong> — When required by law, regulation, or valid legal process.</li>
+        </ul>
+        <p>All third-party partners are contractually obligated to handle data in compliance with applicable privacy regulations.</p>
+    </section>
+
+    <section class="policy-section" id="retention">
+        <h2><span class="num">06</span> Data Retention</h2>
+        <p>Anonymized analytics data is retained for a maximum of 24 months to identify long-term gameplay trends. Crash logs and diagnostic data are automatically purged after 90 days. Locally stored game progress remains on your device until you uninstall the Game or manually clear its data.</p>
+    </section>
+
+    <section class="policy-section" id="security">
+        <h2><span class="num">07</span> Security Measures</h2>
+        <p>We implement industry-standard safeguards to protect the information associated with the Game, including:</p>
+        <ul>
+            <li>Encrypted data transmission via HTTPS/TLS protocols</li>
+            <li>Restricted access to analytics dashboards with role-based permissions</li>
+            <li>Regular security audits of third-party SDK integrations</li>
+            <li>Compliance with Apple's App Store data handling guidelines</li>
+        </ul>
+        <p>While no system is completely impervious to risk, we are committed to maintaining reasonable and appropriate protective measures.</p>
+    </section>
+
+    <section class="policy-section" id="children">
+        <h2><span class="num">08</span> Children's Privacy</h2>
+        <p>Farm Tractor Simulator 2025 is rated 4+ and is suitable for all ages. We do not knowingly collect personal data from children under the age of 13 (or the applicable age of consent in your jurisdiction). If you believe we have inadvertently gathered information from a minor, please contact us immediately and we will take prompt steps to delete it.</p>
+    </section>
+
+    <section class="policy-section" id="rights">
+        <h2><span class="num">09</span> Your Rights &amp; Choices</h2>
+        <p>Depending on your location, you may be entitled to exercise certain rights regarding your data:</p>
+        <ul>
+            <li><strong>Opt-Out of Tracking</strong> — Use your device's Settings → Privacy → Tracking to disable ad tracking for this app.</li>
+            <li><strong>Access &amp; Deletion</strong> — Request details about any data we hold or ask for its deletion by contacting us.</li>
+            <li><strong>Reset Advertising ID</strong> — You can reset your advertising identifier at any time in your device settings.</li>
+            <li><strong>Withdraw Consent</strong> — Where data processing is based on consent, you may withdraw it at any time.</li>
+        </ul>
+        <p>We will respond to valid requests within 30 calendar days.</p>
+    </section>
+
+    <section class="policy-section" id="changes">
+        <h2><span class="num">10</span> Policy Updates</h2>
+        <p>We reserve the right to modify this Privacy Policy at any time. When significant changes are made, we will update the "Last Revised" date at the top of this page. Continued use of the Game after updates constitutes your acceptance of the revised policy. We encourage you to review this page periodically.</p>
+    </section>
+
+    <section class="policy-section" id="contact">
+        <h2><span class="num">11</span> Contact Information</h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:</p>
+        <ul>
+            <li><strong>Developer:</strong> Muhammad Saleem / Mob Tech Gamerz</li>
+            <li><strong>Email:</strong> <a href="mailto:catherinemunand@pm.me" style="color:#8fce00;">catherinemunand@pm.me</a></li>
+            <li><strong>Website:</strong> <a href="https://mobtechgamerz.blogspot.com/" style="color:#8fce00;">mobtechgamerz.blogspot.com</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p><a href="index.html">Farm Tractor Simulator 2025</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    <p>&copy; 2025 Mob Tech Gamerz. All rights reserved.</p>
+</footer>
+
+</body>
 </html>
